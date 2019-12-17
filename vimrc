@@ -13,6 +13,8 @@ set mouse=r
 set backspace=indent,eol,start
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType eruby setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
+
 
 " max text length
 au BufRead,BufNewFile *.rb setlocal textwidth=120
@@ -87,10 +89,6 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'junegunn/fzf.vim'
 " remap envoke key
 nnoremap <silent> <C-z> :FZF<CR>
-
-" Ripgrep
-Plugin 'jremmen/vim-ripgrep'
-let g:rg_highligh = 1
 
 "" Quick comment toggling
 Plugin 'tpope/vim-commentary'
@@ -184,3 +182,4 @@ let g:airline_powerline_fonts = 1
 " 			\}
 
 set colorcolumn=80
+highlight ColorColumn ctermbg=green
