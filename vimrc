@@ -71,7 +71,7 @@ Plugin 'tpope/vim-fugitive'
 " Scala highlights
 Plugin 'derekwyatt/vim-scala'
 " neocomplete Plugin
-" Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neocomplete.vim'
 " show git diif in vim
 Plugin 'airblade/vim-gitgutter'
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -124,11 +124,11 @@ call vundle#end()            " required
 " nnoremap <leader>. :CtrlPTag<cr>
 
 "Neocomplete configurations
-" let g:neocomplete#enable_at_startup = 1
-" let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
 " Move up and down in autocomplete with <c-j> and <c-k>
-" inoremap <expr> <c-j> ("\<C-n>")
-" inoremap <expr> <c-k> ("\<C-p>") 
+inoremap <expr> <c-j> ("\<C-n>")
+inoremap <expr> <c-k> ("\<C-p>") 
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -183,3 +183,8 @@ let g:airline_powerline_fonts = 1
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=green
+
+highlight Pmenu ctermbg=black
+highlight PmenuSel ctermbg=green
+" highlight PmenuSbar ctermbg=gray
+" highlight PmenuThumb ctermbg=gray
