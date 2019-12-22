@@ -14,7 +14,7 @@ set backspace=indent,eol,start
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType eruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
-
+set foldmethod=indent
 
 " max text length
 au BufRead,BufNewFile *.rb setlocal textwidth=120
