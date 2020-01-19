@@ -14,10 +14,25 @@ set backspace=indent,eol,start
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType eruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType python setlocal expandtab shiftwidth=2 tabstop=2
+
 set foldmethod=indent
 
 " max text length
 au BufRead,BufNewFile *.rb setlocal textwidth=120
+au BufNewFile,BufRead *.py setlocal
+    \ tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=79
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
+
+au BufNewFile,BufRead *.js, *.html, *.css 
+    \ tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
 
 " remap splitting windows
 nnoremap <C-h> <C-w>h
@@ -115,6 +130,8 @@ Plugin 'fatih/vim-go'
 Plugin 'elixir-editors/vim-elixir'
 
 Plugin 'posva/vim-vue'
+
+Plugin 'vim-scripts/indentpython.vim'
 call vundle#end()            " required
 
 " Ctrl-P configurations
