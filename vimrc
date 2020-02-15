@@ -205,3 +205,5 @@ highlight Pmenu ctermbg=black
 highlight PmenuSel ctermbg=green
 " highlight PmenuSbar ctermbg=gray
 " highlight PmenuThumb ctermbg=gray
+
+set term=screen-256color
