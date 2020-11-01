@@ -15,6 +15,10 @@ autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType eruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType python setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType css setlocal expandtab shiftwidth=2 tabstop=2
 
 set foldmethod=indent
 
@@ -29,7 +33,7 @@ au BufNewFile,BufRead *.py setlocal
     \ autoindent
     \ fileformat=unix
 
-au BufNewFile,BufRead *.js, *.html, *.css 
+au BufNewFile,BufRead *.js,*.html,*.css,*.jsx setlocal
     \ tabstop=2
     \ softtabstop=2
     \ shiftwidth=2
@@ -43,6 +47,15 @@ nnoremap <C-l> <C-w>l
 nmap :vs :vsplit
 nmap :s :split
 " nnoremap <C-a> <C-w>
+
+" remap text moving
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
 "Pathogen
 set nocp
 " call pathogen#infect()
@@ -132,6 +145,11 @@ Plugin 'elixir-editors/vim-elixir'
 Plugin 'posva/vim-vue'
 
 Plugin 'vim-scripts/indentpython.vim'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'chr4/nginx.vim'
+Plugin 'sukima/xmledit'
+Plugin 'ap/vim-css-color'
+Plugin 'ryanoasis/vim-devicons'
 call vundle#end()            " required
 
 " Ctrl-P configurations
@@ -207,3 +225,5 @@ highlight PmenuSel ctermbg=green
 " highlight PmenuThumb ctermbg=gray
 
 set term=screen-256color
+
+iabbrev <// </<C-X><C-O>

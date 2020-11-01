@@ -10,7 +10,8 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+# HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -116,6 +117,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
@@ -123,7 +126,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export PATH="/usr/local/texlive/2019/bin/x86_64-linux:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -141,3 +144,10 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 alias tmux="tmux -2"
+alias ca="conda activate"
+
+export RUBYOPT='-W:no-deprecated -W:no-experimental'
+
+export GITLAB_HOME=/srv/gitlab
+
+export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nRUNNING\t{{.RunningFor}}\nSTATUS\t{{.Status}}\nSIZE\t{{.Size}}\nVOLUMES\t{{.Mounts}}\n"
